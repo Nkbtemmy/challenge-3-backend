@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0.",
+      "title": "Studio's APIs Documentation",
+      "description": ""
+    },
+    "tags": [
+      {
+        "name": "Studio's APIs Documentation"
+      }
+    ],
+     "consumes": ["application/json"],
+     "produces": ["application/json"],
+      "paths": {
+       "/": {
+          "get": {
+              "tags": ["Default"],
+              "summary": "Default message on server",
+              "operationId": "",
+              "requestBody": {
+              "description": "default router should return message",
+              "content": {
+                  "application/json": {
+                  "schema": {}
+                  },
+                  "application/xml": {
+                  "schema": {}
+                  }
+              },
+              "required": false
+              },
+              "responses": {
+              "200": {
+                  "description": "Message of successful request",
+                  "content": {}
+              }
+              },
+              "x-codegen-request-body-name": "body"
+          }
+      },
+      "/api/v1/albums/{albumId}/photos": {
+        "get": {
+          "tags": [
+            "Album"
+          ],
+          "summary": " get album's data from the System",
+          "operationId": "album's data",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "albumId",
+              "required": true,
+              "description": "Enter here album id "
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "album retreived sucessfully"
+            },
+            "401": {
+              "description": "Not found"
+            }
+          }
+        }
+      }  
+    }
+  }
